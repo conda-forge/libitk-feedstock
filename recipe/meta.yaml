@@ -1,4 +1,4 @@
-{% set version = "4.11.0" %}
+{% set version = "4.11.1" %}
 
 package:
   name: itk
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/InsightSoftwareConsortium/ITK/archive/v{{version}}.tar.gz
-  sha256: a1857aa89f02efce3e091d102fbff7b2c53fe40c7f74580a47236bfd846c4e8b
+  sha256: c6e6d69d9fdc9584e60f9cc6bbf6c75468ebca0d9e3416a1ca5c0bf95fc7c98a
 
 build:
-    number: 1
+    number: 0
     skip: True   # [win and py36]
     features:
     - vc9   # [win and py27]
