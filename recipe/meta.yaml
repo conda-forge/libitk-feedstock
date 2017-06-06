@@ -9,7 +9,7 @@ source:
   sha256: c6e6d69d9fdc9584e60f9cc6bbf6c75468ebca0d9e3416a1ca5c0bf95fc7c98a
 
 build:
-    number: 0
+    number: 1
     skip: True   # [win and py36]
     features:
     - vc9   # [win and py27]
@@ -22,7 +22,7 @@ requirements:
     - cmake    >=3.3
     - ninja
     - expat    2.1.*
-    - hdf5     1.8.*  # [not win]
+    - hdf5     1.8.18|1.8.18.*  # [not win]
     - jpeg     9*
     - libtiff  4.0.*
     - libpng   >=1.6.27,<1.7
@@ -33,7 +33,7 @@ requirements:
     - vc 14    # [win and py>=35]
   run:
     - expat    2.1.*
-    - hdf5     1.8.*  # [not win]
+    - hdf5     1.8.18|1.8.18.*  # [not win]
     - jpeg     9*
     - libtiff  4.0.*
     - libpng   >=1.6.27,<1.7
