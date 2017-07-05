@@ -1,4 +1,4 @@
-{% set version = "4.11.1" %}
+{% set version = "4.12.0" %}
 
 package:
   name: itk
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/InsightSoftwareConsortium/ITK/archive/v{{version}}.tar.gz
-  sha256: c6e6d69d9fdc9584e60f9cc6bbf6c75468ebca0d9e3416a1ca5c0bf95fc7c98a
+  sha256: 76c658ab1d5c9a16d6d6a5aa8f2cac863564f0d0d4062f95ad3096238ea63490
 
 build:
-    number: 1
+    number: 0
     skip: True   # [win and py36]
     features:
     - vc9   # [win and py27]
@@ -48,11 +48,11 @@ test:
   files:
     - example
   commands:
-    - test -d $PREFIX/include/ITK*                        # [unix]
+    - test -d $PREFIX/include/ITK*                        # [not win]
     - if not exist %LIBRARY_INC%\\ITK* exit 1             # [win]
     - itkTestDriver -- echo "Runtime ITK OK"
-    - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [unix]
-    - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" ./example   # [win]
+    - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [not win]
+    - cmake --build . --config Release                                  # [not win]
 
 about:
   home: http://www.itk.org
