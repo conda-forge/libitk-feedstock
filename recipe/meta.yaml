@@ -1,7 +1,7 @@
 {% set version = "4.12.0" %}
 
 package:
-  name: itk
+  name: libitk
   version: "{{version}}"
 
 source:
