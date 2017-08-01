@@ -1,5 +1,5 @@
-About itk
-=========
+About libitk
+============
 
 Home: http://www.itk.org
 
@@ -14,34 +14,34 @@ Summary: Runtime libraries and header files for the Insight Toolkit for segmenta
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/itk-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/itk-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/itk-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/itk-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/itk-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/itk-feedstock/branch/master)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/libitk-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/libitk-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/libitk-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/libitk-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/libitk-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/libitk-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/itk/badges/version.svg)](https://anaconda.org/conda-forge/itk)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/itk/badges/downloads.svg)](https://anaconda.org/conda-forge/itk)
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libitk/badges/version.svg)](https://anaconda.org/conda-forge/libitk)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libitk/badges/downloads.svg)](https://anaconda.org/conda-forge/libitk)
 
-Installing itk
-==============
+Installing libitk
+=================
 
-Installing `itk` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libitk` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `itk` can be installed with:
+Once the `conda-forge` channel has been enabled, `libitk` can be installed with:
 
 ```
-conda install itk
+conda install libitk
 ```
 
-It is possible to list all of the versions of `itk` available on your platform with:
+It is possible to list all of the versions of `libitk` available on your platform with:
 
 ```
-conda search itk --channel conda-forge
+conda search libitk --channel conda-forge
 ```
 
 
@@ -80,17 +80,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating itk-feedstock
-======================
+Updating libitk-feedstock
+=========================
 
-If you would like to improve the itk recipe or build a new
+If you would like to improve the libitk recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/itk-feedstock are
+Note that all branches in the conda-forge/libitk-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
