@@ -14,9 +14,9 @@ Summary: Runtime libraries and header files for the Insight Toolkit for segmenta
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/libitk-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/libitk-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/libitk-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/libitk-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/libitk-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/libitk-feedstock/branch/master)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/itk-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/itk-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/itk-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/itk-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/itk-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/itk-feedstock/branch/master)
 
 Current release info
 ====================
