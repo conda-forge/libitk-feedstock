@@ -14,14 +14,16 @@ Summary: Runtime libraries and header files for the Insight Toolkit for segmenta
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/libitk-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/libitk-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/libitk-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/libitk-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/libitk-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/libitk-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/libitk-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/libitk-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/libitk-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/libitk-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/libitk-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/libitk-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libitk/badges/version.svg)](https://anaconda.org/conda-forge/libitk)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libitk/badges/downloads.svg)](https://anaconda.org/conda-forge/libitk)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libitk-green.svg)](https://anaconda.org/conda-forge/libitk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libitk.svg)](https://anaconda.org/conda-forge/libitk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libitk.svg)](https://anaconda.org/conda-forge/libitk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libitk.svg)](https://anaconda.org/conda-forge/libitk) |
 
 Installing libitk
 =================
@@ -66,6 +68,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
