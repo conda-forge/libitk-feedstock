@@ -1,4 +1,4 @@
-{% set version = "4.13.0" %}
+{% set version = "4.13.1" %}
 
 package:
   name: libitk
@@ -18,7 +18,8 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - cmake    >=3.3
     - ninja
     - expat    2.1.*
