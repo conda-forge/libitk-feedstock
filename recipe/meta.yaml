@@ -46,6 +46,8 @@ requirements:
 test:
   requires:
     - cmake
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
   files:
     - example
   commands:
