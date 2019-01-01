@@ -1,6 +1,8 @@
 About libitk
 ============
 
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+
 Home: http://www.itk.org
 
 Package license: Apache 2.0
@@ -16,7 +18,7 @@ Current build status
 
 [![Linux](https://img.shields.io/circleci/project/github/conda-forge/libitk-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/libitk-feedstock)
 [![OSX](https://img.shields.io/travis/conda-forge/libitk-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/libitk-feedstock)
-![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/libitk-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/libitk-feedstock/branch/master)
 
 Current release info
 ====================
@@ -104,3 +106,10 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@blowekamp](https://github.com/blowekamp/)
+* [@bluescarni](https://github.com/bluescarni/)
+
