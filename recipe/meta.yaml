@@ -15,7 +15,6 @@ requirements:
   build:
     - cmake    >=3.3
     - ninja
-    - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
