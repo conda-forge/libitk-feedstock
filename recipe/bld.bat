@@ -3,7 +3,7 @@ mkdir %BUILD_DIR%
 cd %BUILD_DIR%
 
 REM Configure Step
-cmake -G "Ninja" ^
+cmake -G "%CMAKE_GENERATOR%" ^
     -D BUILD_SHARED_LIBS:BOOL=ON ^
     -D BUILD_TESTING:BOOL=OFF ^
     -D BUILD_EXAMPLES:BOOL=OFF ^
