@@ -2,8 +2,10 @@ set BUILD_DIR=%SRC_DIR%\bld
 mkdir %BUILD_DIR%
 cd %BUILD_DIR%
 
+SET CXX_FLAGS="%CXX_FLAGS% /MP"
+
 REM Configure Step
-cmake -G "Ninja" ^
+cmake -G "%CMAKE_GENERATOR%" ^
     -D BUILD_SHARED_LIBS:BOOL=ON ^
     -D BUILD_TESTING:BOOL=OFF ^
     -D BUILD_EXAMPLES:BOOL=OFF ^

@@ -9,42 +9,34 @@ source:
   sha256: 37122d65b89699df33f34e0859f1e7adf5a6222060dc1c47383ff7aa4531223a
 
 build:
-    number: 0
-    skip: True   # [win and py36]
-    features:
-    - vc9   # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py>=35]
+    number: 1000
 
 requirements:
   build:
-    - toolchain
     - cmake    >=3.3
     - ninja
-    - expat    2.1.*
-    - hdf5     1.8.18|1.8.18.*  # [not win]
-    - jpeg     9*
-    - libtiff  4.0.*
-    - libpng   >=1.6.27,<1.7
-    - zlib     1.2.*
-    - python   # [win]
-    - vc 9     # [win and py27]
-    - vc 10    # [win and py34]
-    - vc 14    # [win and py>=35]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - expat
+    - hdf5                      # [not win]
+    - jpeg
+    - libtiff
+    - libpng
+    - zlib
   run:
-    - expat    2.1.*
-    - hdf5     1.8.18|1.8.18.*  # [not win]
-    - jpeg     9*
-    - libtiff  4.0.*
-    - libpng   >=1.6.27,<1.7
-    - zlib     1.2.*
-    - vc 9   # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - expat
+    - hdf5                      # [not win]
+    - jpeg
+    - libtiff
+    - libpng
+    - zlib
 
 test:
   requires:
     - cmake
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
   files:
     - example
   commands:
