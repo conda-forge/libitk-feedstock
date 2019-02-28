@@ -8,8 +8,6 @@ cxx_compiler:
 - vs2015
 expat:
 - '2.2'
-fortran_compiler:
-- flang
 jpeg:
 - '9'
 libpng:
