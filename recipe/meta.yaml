@@ -9,7 +9,7 @@ source:
   sha256: 98c2fd826e1987d797521d83031fcaa328135daf6524f7823363d66ab288c545
 
 build:
-    number: 0
+    number: 1
 
 requirements:
   build:
@@ -23,14 +23,12 @@ requirements:
     - jpeg
     - libtiff
     - libpng
-    - zlib
   run:
     - expat
     - hdf5                      # [not win]
     - jpeg
     - libtiff
     - libpng
-    - zlib
 
 test:
   requires:
