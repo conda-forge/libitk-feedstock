@@ -21,7 +21,7 @@ jpeg:
 libpng:
 - 1.6.35
 libtiff:
-- 4.0.9
+- 4.0.10
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
