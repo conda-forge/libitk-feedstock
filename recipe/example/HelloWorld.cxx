@@ -25,6 +25,7 @@
 
 // Software Guide : BeginCodeSnippet
 #include "itkImage.h"
+#include "itkImageFileReader.h"
 #include <iostream>
 
 int main()
