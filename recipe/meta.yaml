@@ -18,14 +18,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - expat
+    - expat                     # [not win]
     - hdf5                      # [not win]
     - jpeg
     - libtiff
     - libpng
     - zlib
   run:
-    - expat
+    - expat                     # [not win]
     - hdf5                      # [not win]
     - jpeg
     - libtiff
