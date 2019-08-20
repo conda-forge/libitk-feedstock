@@ -33,6 +33,9 @@ int main()
 
   ImageType::Pointer image = ImageType::New();
 
+  typedef itk::ImageFileReader< ImageType > ReaderType;
+  ReaderType::Pointer reader = ReaderType::New();
+
   std::cout << "ITK Hello World !" << std::endl;
 
   return EXIT_SUCCESS;
