@@ -5,7 +5,7 @@ cd %BUILD_DIR%
 SET CXX_FLAGS="%CXX_FLAGS% /MP"
 
 REM Configure Step
-cmake -G "%CMAKE_GENERATOR%" ^
+cmake -G "Ninja" ^
     -D BUILD_SHARED_LIBS:BOOL=ON ^
     -D BUILD_TESTING:BOOL=OFF ^
     -D BUILD_EXAMPLES:BOOL=OFF ^
@@ -19,6 +19,7 @@ cmake -G "%CMAKE_GENERATOR%" ^
     -D Module_ITKReview:BOOL=ON ^
     -D "CMAKE_SYSTEM_PREFIX_PATH:PATH=%LIBRARY_PREFIX%" ^
     -D "CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX%" ^
+    -D CMAKE_BUILD_TYPE:STRING=RELEASE ^
     "%SRC_DIR%"
 
 if errorlevel 1 exit 1
