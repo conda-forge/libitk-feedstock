@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+rm -rf "${SRC_DIR}/Modules/ThirdParty/JPEG/src/itkjpeg"
+
 # When building 32-bits on 64-bit system this flags is not automatically set by conda-build
 if [ $ARCH == 32 -a "${OSX_ARCH:-notosx}" == "notosx" ]; then
     export CFLAGS="${CFLAGS} -m32"
