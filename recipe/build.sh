@@ -38,10 +38,8 @@ cmake \
     -D "CMAKE_PROGRAM_PATH=${BUILD_PREFIX}" \
     "${SRC_DIR}"
 
-ninja -j $((${CPU_COUNT}+1))
+cmake --build . --config Release
 
 cmake \
     -D CMAKE_INSTALL_PREFIX=$PREFIX \
     -P ${BUILD_DIR}/cmake_install.cmake
-
-
