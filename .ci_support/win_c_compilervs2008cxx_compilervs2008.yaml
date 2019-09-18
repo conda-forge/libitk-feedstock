@@ -1,5 +1,3 @@
-CMAKE_GENERATOR:
-- NMake Makefiles
 c_compiler:
 - vs2008
 channel_sources:
@@ -8,8 +6,6 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2008
-expat:
-- '2.2'
 jpeg:
 - '9'
 libpng:
@@ -17,18 +13,12 @@ libpng:
 libtiff:
 - 4.0.10
 pin_run_as_build:
-  expat:
-    max_pin: x.x
   jpeg:
     max_pin: x
   libpng:
     max_pin: x.x
   libtiff:
     max_pin: x
-  zlib:
-    max_pin: x.x
 zip_keys:
 - - c_compiler
   - cxx_compiler
-zlib:
-- '1.2'
