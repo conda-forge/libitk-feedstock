@@ -69,6 +69,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libitk-green.svg)](https://anaconda.org/conda-forge/libitk) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libitk.svg)](https://anaconda.org/conda-forge/libitk) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libitk.svg)](https://anaconda.org/conda-forge/libitk) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libitk.svg)](https://anaconda.org/conda-forge/libitk) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libitk--devel-green.svg)](https://anaconda.org/conda-forge/libitk-devel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libitk-devel.svg)](https://anaconda.org/conda-forge/libitk-devel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libitk-devel.svg)](https://anaconda.org/conda-forge/libitk-devel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libitk-devel.svg)](https://anaconda.org/conda-forge/libitk-devel) |
 
 Installing libitk
 =================
@@ -79,10 +80,10 @@ Installing `libitk` from the `conda-forge` channel can be achieved by adding `co
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `libitk` can be installed with:
+Once the `conda-forge` channel has been enabled, `libitk, libitk-devel` can be installed with:
 
 ```
-conda install libitk
+conda install libitk libitk-devel
 ```
 
 It is possible to list all of the versions of `libitk` available on your platform with:

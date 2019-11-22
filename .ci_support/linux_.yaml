@@ -14,6 +14,8 @@ docker_image:
 - condaforge/linux-anvil-comp7
 expat:
 - '2.2'
+fftw:
+- '3'
 hdf5:
 - 1.10.5
 jpeg:
@@ -25,6 +27,8 @@ libtiff:
 pin_run_as_build:
   expat:
     max_pin: x.x
+  fftw:
+    max_pin: x
   jpeg:
     max_pin: x
   libpng:

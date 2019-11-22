@@ -6,6 +6,8 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2015
+fftw:
+- '3'
 jpeg:
 - '9'
 libpng:
@@ -13,6 +15,8 @@ libpng:
 libtiff:
 - 4.0.10
 pin_run_as_build:
+  fftw:
+    max_pin: x
   jpeg:
     max_pin: x
   libpng:
