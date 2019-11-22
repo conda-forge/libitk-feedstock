@@ -42,7 +42,3 @@ cmake \
     "${SRC_DIR}"
 
 cmake --build . --config Release
-
-cmake \
-    -D CMAKE_INSTALL_PREFIX=$PREFIX \
-    -P ${BUILD_DIR}/cmake_install.cmake

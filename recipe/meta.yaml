@@ -9,7 +9,7 @@ source:
   sha256: c6b3c33ecc73104c906e0e1a1bfaa41a09af24bf53a4ec5e5c265d7e82bdf69f
 
 build:
-    number: 0
+    number: 1
     skip: true  # [win and vc<14]
 
 requirements:
@@ -26,30 +26,50 @@ requirements:
     - libtiff
     - libpng
     - zlib                      # [not win]
-  run:
-    - expat                     # [not win]
-    - fftw
-    - hdf5                      # [not win]
-    - jpeg
-    - libtiff
-    - libpng
-    - zlib                      # [not win]
 
-test:
-  requires:
-    - cmake
-    - {{ compiler("c") }}
-    - {{ compiler("cxx") }}
-  files:
-    - example
-    - ITK-JPEG.jpg
-  commands:
-    - test -d $PREFIX/include/ITK*                        # [not win]
-    - if not exist %LIBRARY_INC%\\ITK* exit 1             # [win]
-    - itkTestDriver -- echo "Runtime ITK OK"
-    - itkTestDriver --no-process --compare-MD5 ITK-JPEG.jpg 959e1682d19026fc62cfbdc140df31da
-    - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [not win]
-    - cmake --build . --config Release                                  # [not win]
+outputs:
+  - name: libitk
+    script: libitk_install.sh   # [not win]
+    script: libitk_install.bat  # [win]
+    requirements:
+      run:
+        - expat                     # [not win]
+        - fftw
+        - hdf5                      # [not win]
+        - jpeg
+        - libtiff
+        - libpng
+        - zlib                      # [not win]
+
+    test:
+      files:
+        - ITK-JPEG.jpg
+      commands:
+        - test -d $PREFIX/include/ITK*                        # [not win]
+        - if not exist %LIBRARY_INC%\\ITK* exit 1             # [win]
+        - itkTestDriver -- echo "Runtime ITK OK"
+        - itkTestDriver --no-process --compare-MD5 ITK-JPEG.jpg 959e1682d19026fc62cfbdc140df31da
+  - name: libitk-devel
+    script: libitk-devel_install.sh   # [not win]
+    script: libitk-devel_install.bat  # [win]
+    requirements:
+      build:
+        - cmake
+      host:
+        - {{ pin_subpackage("libitk", exact=True) }}
+      run:
+        - {{ pin_subpackage("libitk", exact=True) }}
+
+    test:
+      requires:
+        - cmake
+        - {{ compiler("c") }}
+        - {{ compiler("cxx") }}
+      files:
+        - example
+      commands:
+        - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [not win]
+        - cmake --build . --config Release                                  # [not win]
 
 about:
   home: http://www.itk.org
