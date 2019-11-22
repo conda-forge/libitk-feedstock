@@ -65,10 +65,12 @@ outputs:
         - cmake
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
+        - ninja  # [win]
       files:
         - example
       commands:
         - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [not win]
+        - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" example     # [win]
         - cmake --build . --config Release                                  # [not win]
 
 about:
