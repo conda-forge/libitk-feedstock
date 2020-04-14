@@ -1,11 +1,11 @@
 c_compiler:
-- vs2015
+- vs2017
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2015
+- vs2017
 fftw:
 - '3'
 jpeg:
@@ -13,7 +13,7 @@ jpeg:
 libpng:
 - '1.6'
 libtiff:
-- 4.0.10
+- 4.1.0
 pin_run_as_build:
   fftw:
     max_pin: x
@@ -23,11 +23,5 @@ pin_run_as_build:
     max_pin: x.x
   libtiff:
     max_pin: x
-  vc:
-    max_pin: x
 vc:
 - '14'
-zip_keys:
-- - vc
-  - c_compiler
-  - cxx_compiler
