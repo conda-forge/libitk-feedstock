@@ -25,6 +25,7 @@ requirements:
     - jpeg
     - libtiff
     - libpng
+    - eigen
     - zlib                      # [not win]
 
 outputs:
@@ -39,6 +40,7 @@ outputs:
         - jpeg
         - libtiff
         - libpng
+        - eigen
         - zlib                      # [not win]
 
     test:
