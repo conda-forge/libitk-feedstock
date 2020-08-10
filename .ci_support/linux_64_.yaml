@@ -1,13 +1,23 @@
 c_compiler:
-- vs2017
+- gcc
+c_compiler_version:
+- '7'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2017
+- gxx
+cxx_compiler_version:
+- '7'
+docker_image:
+- condaforge/linux-anvil-comp7
+expat:
+- '2.2'
 fftw:
 - '3'
+hdf5:
+- 1.10.6
 jpeg:
 - '9'
 libpng:
@@ -15,6 +25,8 @@ libpng:
 libtiff:
 - 4.1.0
 pin_run_as_build:
+  expat:
+    max_pin: x.x
   fftw:
     max_pin: x
   jpeg:
@@ -23,5 +35,9 @@ pin_run_as_build:
     max_pin: x.x
   libtiff:
     max_pin: x
-vc:
-- '14'
+  zlib:
+    max_pin: x.x
+target_platform:
+- linux-64
+zlib:
+- '1.2'
