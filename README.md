@@ -5,11 +5,9 @@ Home: http://www.itk.org
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libitk-feedstock/blob/master/LICENSE.txt)
 
 Summary: Runtime libraries and header files for the Insight Toolkit for segmentation and registration.
-
-
 
 Current build status
 ====================
