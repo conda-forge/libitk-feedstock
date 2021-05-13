@@ -1,0 +1,43 @@
+From 4ecd711eab0f2f4dc1cf943960e472aaf05b8b81 Mon Sep 17 00:00:00 2001
+From: Bradley Lowekamp <blowekamp@mail.nih.gov>
+Date: Thu, 13 May 2021 15:51:17 +0000
+Subject: [PATCH] BUG: Fix HDF5 installation with cmake targets
+
+---
+ Modules/ThirdParty/HDF5/CMakeLists.txt | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+diff --git a/Modules/ThirdParty/HDF5/CMakeLists.txt b/Modules/ThirdParty/HDF5/CMakeLists.txt
+index b40d30dff9..03ac0f505c 100644
+--- a/Modules/ThirdParty/HDF5/CMakeLists.txt
++++ b/Modules/ThirdParty/HDF5/CMakeLists.txt
+@@ -21,18 +21,19 @@ endif()
+ if(ITK_USE_SYSTEM_HDF5)
+ 
+   if(HDF5_DIR)
+-    # When ITK's config is loaded, load HDF5 too.
+-    set(ITKHDF5_EXPORT_CODE_INSTALL "
+-set(HDF5_DIR \"${HDF5_DIR}\")
+-find_package(HDF5 REQUIRED NO_MODULE)
++    set(_HDF5_DIR_CODE "set(HDF5_DIR \"${HDF5_DIR}\")")
++  endif()
++  # When ITK's config is loaded, load HDF5 too.
++  set(ITKHDF5_EXPORT_CODE_INSTALL "
++${_HDF5_DIR_CODE}
++find_package(HDF5 REQUIRED COMPONENTS CXX C)
+ ")
+     set(ITKHDF5_EXPORT_CODE_BUILD "
+ if(NOT ITK_BINARY_DIR)
+-  set(HDF5_DIR \"${HDF5_DIR}\")
+-  find_package(HDF5 REQUIRED NO_MODULE)
++  ${_HDF5_DIR_CODE}
++  find_package(HDF5 REQUIRED COMPONENTS CXX C)
+ endif()
+ ")
+-  endif()
+ 
+   if(BUILD_SHARED_LIBS)
+     if (TARGET hdf5-shared)
+-- 
+2.25.1
+
