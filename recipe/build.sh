@@ -6,9 +6,17 @@ if [ $ARCH == 32 -a "${OSX_ARCH:-notosx}" == "notosx" ]; then
     export CXXFLAGS="${CXXFLAGS} -m32"
 fi
 
+
 BUILD_DIR=${SRC_DIR}/build
 mkdir ${BUILD_DIR}
 cd ${BUILD_DIR}
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 ]]; then
+    try_run_results="${RECIPE_DIR}/TryRunResults-${target_platform}.cmake"
+    if [[ -f "$try_run_results" ]]; then
+        CMAKE_ARGS="${CMAKE_ARGS} -C ${try_run_results}"
+    fi
+fi
 
 
 cmake \
