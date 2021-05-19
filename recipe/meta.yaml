@@ -12,7 +12,7 @@ source:
     - 0001-BUG-Fix-HDF5-installation-with-cmake-targets.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -70,13 +70,13 @@ outputs:
         - cmake
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
-        - ninja  # [win]
+        - ninja
       files:
         - example
       commands:
-        - cmake -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [not win]
-        - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" example     # [win]
-        - cmake --build . --config Release                                  # [not win]
+        - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [not win]
+        - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" -D CMAKE_BUILD_TYPE:STRING=RELEASE example     # [win]
+        - cmake --build . --config Release
 
 about:
   home: http://www.itk.org
