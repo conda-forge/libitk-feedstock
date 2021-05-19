@@ -52,4 +52,4 @@ cmake \
     -D "CMAKE_PROGRAM_PATH=${BUILD_PREFIX}" \
     "${SRC_DIR}"
 
-cmake --build . --config Release
+cmake --build . --config Release -- -j 2
