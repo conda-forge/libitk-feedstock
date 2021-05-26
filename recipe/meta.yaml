@@ -12,7 +12,7 @@ source:
     - 0001-BUG-Fix-HDF5-installation-with-cmake-targets.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
 
 requirements:
@@ -30,6 +30,7 @@ requirements:
     - libpng
     - eigen
     - zlib                      # [not win]
+    - tbb-devel
 
 outputs:
   - name: libitk
@@ -45,6 +46,7 @@ outputs:
         - libpng
         - eigen
         - zlib                      # [not win]
+        - tbb
 
     test:
       files:
@@ -64,6 +66,7 @@ outputs:
         - {{ pin_subpackage("libitk", exact=True) }}
       run:
         - {{ pin_subpackage("libitk", exact=True) }}
+        - tbb-devel
 
     test:
       requires:

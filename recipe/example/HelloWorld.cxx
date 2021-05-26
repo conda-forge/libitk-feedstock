@@ -26,6 +26,7 @@
 // Software Guide : BeginCodeSnippet
 #include "itkImage.h"
 #include "itkImageFileReader.h"
+#include "itkMultiThreaderBase.h"
 #include <iostream>
 
 int main()
@@ -38,6 +39,10 @@ int main()
   ReaderType::Pointer reader = ReaderType::New();
 
   std::cout << "ITK Hello World !" << std::endl;
+
+  auto threader =   itk::MultiThreaderBase::GetGlobalDefaultThreader();
+
+  std::cout << "GlobalDefaultTheader: " << itk::MultiThreaderBase::ThreaderTypeToString(threader) << std::endl;
 
   return EXIT_SUCCESS;
 }
