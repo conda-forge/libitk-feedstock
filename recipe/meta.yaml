@@ -12,7 +12,7 @@ source:
     - 0001-BUG-Fix-HDF5-installation-with-cmake-targets.patch
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win and vc<14]
 
 requirements:
