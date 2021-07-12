@@ -41,6 +41,9 @@ cmake \
     -D Module_ITKReview:BOOL=ON \
     -D Module_SimpleITKFilters=ON \
     -D Module_ITKTBB:BOOL=ON \
+    -D Module_MGHIO:BOOL=ON \
+    -D Module_GenericLabelInterpolator:BOOL=ON \
+    -D Module_AdaptiveDenoising:BOOL=ON \
     -D "ITK_DEFAULT_THREADER:STRING=Pool" \
     -D "CMAKE_BUILD_TYPE:STRING=RELEASE" \
     -D "CMAKE_FIND_ROOT_PATH:PATH=${PREFIX}" \
