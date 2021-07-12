@@ -20,6 +20,9 @@ cmake -G "Ninja" ^
     -D Module_ITKReview:BOOL=ON ^
     -D Module_SimpleITKFilters=ON ^
     -D Module_ITKTBB:BOOL=ON ^
+    -D Module_MGHIO:BOOL=ON ^
+    -D Module_GenericLabelInterpolator:BOOL=ON ^
+    -D Module_AdaptiveDenoising:BOOL=ON ^
     -D "ITK_DEFAULT_THREADER:STRING=Pool" ^
     -D "CMAKE_SYSTEM_PREFIX_PATH:PATH=%LIBRARY_PREFIX%" ^
     -D "CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX%" ^
