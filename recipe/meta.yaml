@@ -8,9 +8,6 @@ source:
   url: https://github.com/InsightSoftwareConsortium/ITK/archive/v{{ version }}.tar.gz
   sha256: 6022b2b64624b8bcec3333fe48d5f74ff6ebceb3bdf98258ba7d7fbbc76b99ab
 
-  patches:
-    - 0001-BUG-Fix-HDF5-installation-with-cmake-targets.patch
-
 build:
   number: 0
   skip: true  # [win and vc<14]
