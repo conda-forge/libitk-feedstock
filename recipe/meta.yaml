@@ -26,7 +26,7 @@ requirements:
     - hdf5
     - jpeg
     - libtiff
-    - libpng
+    - libpng                    # [not win]
     - eigen
     - zlib                      # [not win]
     - tbb-devel
@@ -42,7 +42,7 @@ outputs:
         - hdf5
         - jpeg
         - libtiff
-        - libpng
+        - libpng                    # [not win]
         - eigen
         - zlib                      # [not win]
         - tbb
