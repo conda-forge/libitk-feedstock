@@ -4,9 +4,9 @@ conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+linux_aarch64:
+  enabled: false
+linux_ppc64le:
+  enabled: false
 test: native_and_emulated
 test_on_native_only: true
-linux_ppc64le:
-  enabled: False
-linux_aarch64:
-  enabled: False
