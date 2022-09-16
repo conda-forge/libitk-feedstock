@@ -1,4 +1,6 @@
 build_platform:
+  linux_ppc64le: linux_ppc64le
+  linux_aarch64: linux_aarch64
   osx_arm64: osx_64
 conda_forge_output_validation: true
 github:
@@ -7,6 +9,6 @@ github:
 test: native_and_emulated
 test_on_native_only: true
 linux_ppc64le:
-  enabled: False
+  enabled: True
 linux_aarch64:
-  enabled: False
+  enabled: True
