@@ -5,9 +5,11 @@ github:
   branch_name: main
   tooling_branch_name: main
 linux_aarch64:
-  enabled: false
+  enabled: True
 linux_ppc64le:
-  enabled: false
+  enabled: False
+provider:
+  linux_aarch64: default
 test: native_and_emulated
 test_on_native_only: true
 conda_build:
