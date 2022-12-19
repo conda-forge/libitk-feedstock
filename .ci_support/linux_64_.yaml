@@ -25,7 +25,7 @@ jpeg:
 libpng:
 - '1.6'
 libtiff:
-- '4'
+- '4.5'
 target_platform:
 - linux-64
 tbb:
