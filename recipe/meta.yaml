@@ -11,7 +11,7 @@ source:
 build:
   run_exports:
     - {{ pin_subpackage('libitk', min_pin='x.x', max_pin='x.x') }}
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
 
 requirements:
@@ -24,7 +24,7 @@ requirements:
     - expat                     # [not win]
     - fftw
     - hdf5
-    - jpeg
+    - libjpeg-turbo
     - libtiff
     - libpng                    # [not win]
     - eigen
@@ -40,7 +40,7 @@ outputs:
         - expat                     # [not win]
         - fftw
         - hdf5
-        - jpeg
+        - libjpeg-turbo
         - libtiff
         - libpng                    # [not win]
         - eigen
