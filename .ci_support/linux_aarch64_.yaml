@@ -23,7 +23,7 @@ expat:
 fftw:
 - '3'
 hdf5:
-- 1.14.1
+- 1.14.2
 libjpeg_turbo:
 - 2.1.5
 libpng:
