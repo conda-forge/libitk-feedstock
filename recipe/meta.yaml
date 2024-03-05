@@ -1,4 +1,4 @@
-{% set version = "5.3.0" %}
+{% set version = "5.4rc02" %}
 
 package:
   name: libitk
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/InsightSoftwareConsortium/ITK/archive/v{{ version }}.tar.gz
-  sha256: 64e7e8094a5023c8f68ee042459d6319581fadb35e2fe90a4ae230ce36369db1
+  sha256: cbe5508dafa054ea05fb3461c3fc72b5a9fddbde1b1ce3c14c150dc730603bba
 
 build:
   run_exports:
