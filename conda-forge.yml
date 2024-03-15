@@ -14,4 +14,3 @@ linux_ppc64le:
 provider:
   linux_aarch64: azure
 test: native_and_emulated
-test_on_native_only: true
