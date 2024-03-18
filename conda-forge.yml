@@ -7,10 +7,6 @@ conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
-linux_aarch64:
-  enabled: true
-linux_ppc64le:
-  enabled: false
 provider:
   linux_aarch64: azure
 test: native_and_emulated
