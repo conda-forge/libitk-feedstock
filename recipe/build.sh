@@ -18,6 +18,11 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 ]]; then
     fi
 fi
 
+use_tbb=ON
+if [ "$(uname)" == "Darwin" ]; then
+    use_tbb=OFF
+fi
+
 
 cmake \
     -G "Ninja" \
@@ -41,7 +46,7 @@ cmake \
     -D GDCM_USE_COREFOUNDATION_LIBRARY:BOOL=OFF \
     -D Module_ITKReview:BOOL=ON \
     -D Module_SimpleITKFilters=ON \
-    -D Module_ITKTBB:BOOL=ON \
+    -D Module_ITKTBB:BOOL=${use_tbb} \
     -D Module_MGHIO:BOOL=ON \
     -D Module_ITKIOTransformMINC:BOOL=ON \
     -D Module_GenericLabelInterpolator:BOOL=ON \
