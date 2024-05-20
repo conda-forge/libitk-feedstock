@@ -4,6 +4,10 @@ c_compiler:
 - gcc
 c_compiler_version:
 - '12'
+c_stdlib:
+- sysroot
+c_stdlib_version:
+- '2.17'
 cdt_arch:
 - aarch64
 cdt_name:
@@ -23,7 +27,7 @@ expat:
 fftw:
 - '3'
 hdf5:
-- 1.14.2
+- 1.14.3
 libjpeg_turbo:
 - '3'
 libpng:
@@ -39,5 +43,7 @@ tbb_devel:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - c_stdlib_version
+  - cdt_name
 zlib:
 - '1.2'
