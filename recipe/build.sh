@@ -6,6 +6,11 @@ if [ $ARCH == 32 -a "${OSX_ARCH:-notosx}" == "notosx" ]; then
     export CXXFLAGS="${CXXFLAGS} -m32"
 fi
 
+se_tbb=ON
+if [ "$(uname)" == "Darwin" ]; then
+   use_tbb=OFF
+fi
+
 
 BUILD_DIR=${SRC_DIR}/build
 mkdir ${BUILD_DIR}
@@ -41,7 +46,7 @@ cmake \
     -D GDCM_USE_COREFOUNDATION_LIBRARY:BOOL=OFF \
     -D Module_ITKReview:BOOL=ON \
     -D Module_SimpleITKFilters=ON \
-    -D Module_ITKTBB:BOOL=ON \
+    -D Module_ITKTBB:BOOL=${use_tbb} \
     -D Module_MGHIO:BOOL=ON \
     -D Module_ITKIOTransformMINC:BOOL=ON \
     -D Module_GenericLabelInterpolator:BOOL=ON \
