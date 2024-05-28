@@ -80,14 +80,14 @@ Current release info
 Installing libitk
 =================
 
-Installing `libitk` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libitk` from the `conda-forge/label/libitk_dev` channel can be achieved by adding `conda-forge/label/libitk_dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/libitk_dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libitk, libitk-devel` can be installed with `conda`:
+Once the `conda-forge/label/libitk_dev` channel has been enabled, `libitk, libitk-devel` can be installed with `conda`:
 
 ```
 conda install libitk libitk-devel
@@ -102,26 +102,26 @@ mamba install libitk libitk-devel
 It is possible to list all of the versions of `libitk` available on your platform with `conda`:
 
 ```
-conda search libitk --channel conda-forge
+conda search libitk --channel conda-forge/label/libitk_dev
 ```
 
 or with `mamba`:
 
 ```
-mamba search libitk --channel conda-forge
+mamba search libitk --channel conda-forge/label/libitk_dev
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libitk --channel conda-forge
+mamba repoquery search libitk --channel conda-forge/label/libitk_dev
 
 # List packages depending on `libitk`:
-mamba repoquery whoneeds libitk --channel conda-forge
+mamba repoquery whoneeds libitk --channel conda-forge/label/libitk_dev
 
 # List dependencies of `libitk`:
-mamba repoquery depends libitk --channel conda-forge
+mamba repoquery depends libitk --channel conda-forge/label/libitk_dev
 ```
 
 
