@@ -9,9 +9,7 @@ source:
   sha256: d71a36fc0aee2c9257fe128f7657feb1e671461bd48561b620619f290c71795e
 
 build:
-  run_exports:
-    - {{ pin_subpackage('libitk', min_pin='x.x', max_pin='x.x') }}
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
 
 requirements:
@@ -57,6 +55,9 @@ outputs:
         - itkTestDriver -- echo "Runtime ITK OK"
         - itkTestDriver --no-process --compare-MD5 ITK-JPEG.jpg 959e1682d19026fc62cfbdc140df31da
   - name: libitk-devel
+    build:
+      run_exports:
+        - {{ pin_subpackage('libitk', max_pin='x.x') }}
     script: libitk-devel_install.sh  # [not win]
     script: libitk-devel_install.bat  # [win]
     requirements:
