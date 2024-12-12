@@ -27,7 +27,7 @@ requirements:
     - libtiff
     - libpng                    # [not win]
     - eigen
-    - zlib                      # [not win]
+    - zlib-ng                    # [not win]
     - tbb-devel
 
 outputs:
@@ -43,7 +43,7 @@ outputs:
         - libtiff
         - libpng                    # [not win]
         - eigen
-        - zlib                      # [not win]
+        - zlib-ng                    # [not win]
         - tbb
 
     test:
