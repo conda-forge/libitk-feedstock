@@ -34,7 +34,7 @@ cmake -G "Ninja" ^
 if errorlevel 1 exit 1
 
 REM Build step
-cmake --build  . --config Release
+cmake --build . --config Release -- -j%CPU_COUNT%
 if errorlevel 1 exit 1
 
 REM Install step
