@@ -6,7 +6,7 @@ if [ $ARCH == 32 -a "${OSX_ARCH:-notosx}" == "notosx" ]; then
     export CXXFLAGS="${CXXFLAGS} -m32"
 fi
 
-se_tbb=ON
+use_tbb=ON
 if [ "$(uname)" == "Darwin" ]; then
    use_tbb=OFF
 fi
@@ -38,6 +38,7 @@ cmake \
     -D ITK_USE_SYSTEM_ZLIB:BOOL=ON \
     -D ITK_USE_SYSTEM_FFTW:BOOL=ON \
     -D ITK_USE_SYSTEM_EIGEN:BOOL=ON \
+    -D ITK_USE_SYSTEM_OPENJPEG:BOOL=ON \
     -D ITK_USE_FFTWD:BOOL=ON \
     -D ITK_USE_FFTWF:BOOL=ON \
     -D ITK_USE_KWSTYLE:BOOL=OFF \
