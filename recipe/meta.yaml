@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/InsightSoftwareConsortium/ITK/archive/v{{ version }}.tar.gz
   sha256: cf28bc7220c57c24ebcbabbd3b2544ea7ab65f0aad430a99f8e157738ed812b7
+  patches:
+    - 0001-BUG-use-check_symbol_exists-for-TIFFFieldReadCount.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
 
 requirements:
