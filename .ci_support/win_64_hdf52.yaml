@@ -1,0 +1,26 @@
+c_compiler:
+- vs2022
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2022
+fftw:
+- '3'
+hdf5:
+- '2'
+libjpeg_turbo:
+- '3'
+libtiff:
+- '4.7'
+target_platform:
+- win-64
+tbb:
+- '2022'
+tbb_devel:
+- '2022'
+vc:
+- '14'
