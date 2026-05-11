@@ -11,6 +11,14 @@ if [ "$(uname)" == "Darwin" ]; then
    use_tbb=OFF
 fi
 
+# Skip Python wrapping on linux-ppc64le: castxml's bundled Clang can't parse
+# PowerPC's __float128/__ieee128 (used by libstdc++ <limits>) or Eigen's
+# AltiVec PacketMath. Neither PyPI itk nor conda-forge itk ship for ppc64le.
+itk_wrap_python=ON
+if [ "${target_platform}" == "linux-ppc64le" ]; then
+    itk_wrap_python=OFF
+fi
+
 
 BUILD_DIR=${SRC_DIR}/build
 mkdir ${BUILD_DIR}
@@ -71,7 +79,7 @@ cmake \
     -D "CMAKE_FIND_APPBUNDLE:STRING=NEVER" \
     -D "CMAKE_INSTALL_PREFIX=${PREFIX}" \
     -D "CMAKE_PROGRAM_PATH=${BUILD_PREFIX}" \
-    -D ITK_WRAP_PYTHON:BOOL=ON \
+    -D ITK_WRAP_PYTHON:BOOL=${itk_wrap_python} \
     -D ITK_USE_SYSTEM_CASTXML:BOOL=ON \
     -D WRAP_ITK_INSTALL_COMPONENT_IDENTIFIER:STRING=PythonWrapping \
     -D Python3_EXECUTABLE:FILEPATH="${PYTHON}" \

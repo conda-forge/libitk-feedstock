@@ -95,6 +95,8 @@ outputs:
 
   # libitk-wrapping has no run_exports: Python consumers depend on it directly.
   - name: libitk-wrapping
+    build:
+      skip: true  # [linux and ppc64le]
     script: libitk-wrapping_install.sh  # [not win]
     script: libitk-wrapping_install.bat  # [win]
     requirements:
@@ -118,6 +120,8 @@ outputs:
   # .wrap files) needed to build Python-wrapped remote modules against an
   # installed ITK.
   - name: libitk-wrapping-devel
+    build:
+      skip: true  # [linux and ppc64le]
     script: libitk-wrapping-devel_install.sh  # [not win]
     script: libitk-wrapping-devel_install.bat  # [win]
     requirements:
