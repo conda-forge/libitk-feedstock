@@ -21,6 +21,11 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 ]]; then
     if [[ -f "$try_run_results" ]]; then
         CMAKE_ARGS="${CMAKE_ARGS} -C ${try_run_results}"
     fi
+    # Target-arch Python hints. find_package(Python3 Development.Module)
+    # otherwise introspects ${PYTHON} (BUILD x86_64 headers) which
+    # CMAKE_FIND_ROOT_PATH=${PREFIX} then filters out.
+    CMAKE_ARGS="${CMAKE_ARGS} -DPython3_INCLUDE_DIR:PATH=${PREFIX}/include/python${PY_VER}"
+    CMAKE_ARGS="${CMAKE_ARGS} -DPython3_LIBRARY:FILEPATH=${PREFIX}/lib/libpython${PY_VER}.so"
 fi
 
 
