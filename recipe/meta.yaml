@@ -11,7 +11,7 @@ source:
     - 0001-BUG-use-check_symbol_exists-for-TIFFFieldReadCount.patch
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win and vc<14]
 
 requirements:
@@ -21,6 +21,9 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - castxml
   host:
     - expat                     # [not win]
     - fftw
@@ -31,6 +34,7 @@ requirements:
     - eigen
     - zlib                      # [not win]
     - tbb-devel
+    - python
 
 outputs:
   - name: libitk
@@ -83,6 +87,25 @@ outputs:
         - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=${PREFIX}" ./example  # [not win]
         - cmake -G Ninja -D "CMAKE_SYSTEM_PREFIX_PATH:FILEPATH=%PREFIX%" -D CMAKE_BUILD_TYPE:STRING=RELEASE example     # [win]
         - cmake --build . --config Release
+
+  # libitk-wrapping has no run_exports: Python consumers depend on it directly.
+  - name: libitk-wrapping
+    script: libitk-wrapping_install.sh  # [not win]
+    script: libitk-wrapping_install.bat  # [win]
+    requirements:
+      host:
+        - python
+        - {{ pin_subpackage("libitk", exact=True) }}
+      run:
+        - python
+        - numpy
+        - {{ pin_subpackage("libitk", exact=True) }}
+    test:
+      requires:
+        - python {{ python }}
+        - numpy
+      imports:
+        - itk
 
 about:
   home: http://www.itk.org

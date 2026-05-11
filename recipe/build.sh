@@ -63,6 +63,15 @@ cmake \
     -D "CMAKE_FIND_APPBUNDLE:STRING=NEVER" \
     -D "CMAKE_INSTALL_PREFIX=${PREFIX}" \
     -D "CMAKE_PROGRAM_PATH=${BUILD_PREFIX}" \
+    -D ITK_WRAP_PYTHON:BOOL=ON \
+    -D ITK_USE_SYSTEM_CASTXML:BOOL=ON \
+    -D WRAP_ITK_INSTALL_COMPONENT_IDENTIFIER:STRING=PythonWrapping \
+    -D Python3_EXECUTABLE:FILEPATH="${PYTHON}" \
+    -D ITK_WRAP_unsigned_short:BOOL=ON \
+    -D ITK_WRAP_double:BOOL=ON \
+    -D ITK_WRAP_complex_double:BOOL=ON \
+    -D ITK_WRAP_IMAGE_DIMS:STRING="2;3;4" \
+    -D PY_SITE_PACKAGES_PATH:PATH="lib/python${PY_VER}/site-packages" \
     "${SRC_DIR}"
 
 cmake --build . --config Release -- -j${CPU_COUNT}
