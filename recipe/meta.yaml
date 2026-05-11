@@ -94,6 +94,8 @@ outputs:
     script: libitk-wrapping_install.sh  # [not win]
     script: libitk-wrapping_install.bat  # [win]
     requirements:
+      build:
+        - cmake
       host:
         - python
         - {{ pin_subpackage("libitk", exact=True) }}
