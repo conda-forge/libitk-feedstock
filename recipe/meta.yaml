@@ -11,7 +11,7 @@ source:
     - 0001-BUG-use-check_symbol_exists-for-TIFFFieldReadCount.patch
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win and vc<14]
 
 requirements:
@@ -30,7 +30,7 @@ requirements:
     - libpng                    # [not win]
     - eigen
     - zlib                      # [not win]
-    - tbb-devel
+    - tbb-devel                 # [not osx]
 
 outputs:
   - name: libitk
@@ -46,7 +46,7 @@ outputs:
         - libpng                    # [not win]
         - eigen
         - zlib                      # [not win]
-        - tbb
+        - tbb                       # [not osx]
 
     test:
       files:
@@ -69,7 +69,7 @@ outputs:
         - {{ pin_subpackage("libitk", exact=True) }}
       run:
         - {{ pin_subpackage("libitk", exact=True) }}
-        - tbb-devel
+        - tbb-devel  # [not osx]
 
     test:
       requires:
