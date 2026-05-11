@@ -75,6 +75,10 @@ outputs:
       run:
         - {{ pin_subpackage("libitk", exact=True) }}
         - tbb-devel
+        # ITK headers have `#include <Eigen/...>` (ITK_USE_SYSTEM_EIGEN=ON),
+        # so consumers compiling against libitk-devel need Eigen on the
+        # include path.
+        - eigen
 
     test:
       requires:
