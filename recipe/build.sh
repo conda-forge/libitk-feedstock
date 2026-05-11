@@ -26,6 +26,9 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 1 ]]; then
     # CMAKE_FIND_ROOT_PATH=${PREFIX} then filters out.
     CMAKE_ARGS="${CMAKE_ARGS} -DPython3_INCLUDE_DIR:PATH=${PREFIX}/include/python${PY_VER}"
     CMAKE_ARGS="${CMAKE_ARGS} -DPython3_LIBRARY:FILEPATH=${PREFIX}/lib/libpython${PY_VER}.so"
+    # Castxml (Clang-based) needs an explicit target triple under cross-compile;
+    # ITK's wrapping reads CMAKE_CXX_COMPILER_TARGET in itk_auto_load_submodules.cmake.
+    CMAKE_ARGS="${CMAKE_ARGS} -DCMAKE_CXX_COMPILER_TARGET=${HOST}"
 fi
 
 
