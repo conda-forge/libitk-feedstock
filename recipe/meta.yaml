@@ -1,4 +1,5 @@
 {% set version = "5.4.6" %}
+{% set itk_dir = "ITK-" + '.'.join(version.split('.')[:2]) %}
 
 package:
   name: libitk
@@ -106,6 +107,31 @@ outputs:
         - numpy
       imports:
         - itk
+
+  # Wrapping infrastructure (CMake helpers + Wrapping/ source tree + per-module
+  # .wrap files) needed to build Python-wrapped remote modules against an
+  # installed ITK.
+  - name: libitk-wrapping-devel
+    script: libitk-wrapping-devel_install.sh  # [not win]
+    script: libitk-wrapping-devel_install.bat  # [win]
+    requirements:
+      host:
+        - python
+        - {{ pin_subpackage("libitk", exact=True) }}
+      run:
+        - {{ pin_subpackage("libitk-devel", exact=True) }}
+        - {{ pin_subpackage("libitk-wrapping", exact=True) }}
+        - swig
+        - castxml
+        - pygccxml
+    test:
+      commands:
+        - test -f $PREFIX/lib/cmake/Wrapping/CMakeLists.txt              # [not win]
+        - test -f $PREFIX/lib/cmake/{{ itk_dir }}/WrappingConfigCommon.cmake   # [not win]
+        - test -f $PREFIX/lib/cmake/{{ itk_dir }}/ITKModuleExternal.cmake      # [not win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\Wrapping\\CMakeLists.txt exit 1            # [win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\{{ itk_dir }}\\WrappingConfigCommon.cmake exit 1 # [win]
+        - if not exist %LIBRARY_PREFIX%\\lib\\cmake\\{{ itk_dir }}\\ITKModuleExternal.cmake exit 1    # [win]
 
 about:
   home: http://www.itk.org
