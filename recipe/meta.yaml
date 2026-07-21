@@ -1,4 +1,4 @@
-{% set version = "5.4.6" %}
+{% set version = "5.4.7" %}
 
 package:
   name: libitk
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/InsightSoftwareConsortium/ITK/archive/v{{ version }}.tar.gz
-  sha256: cf28bc7220c57c24ebcbabbd3b2544ea7ab65f0aad430a99f8e157738ed812b7
+  sha256: c953ad7957c481dbb17cfebf03fc61e5252b2be7ccf6757d1234b48ac99914f8
   patches:
     - 0001-BUG-use-check_symbol_exists-for-TIFFFieldReadCount.patch
 
 build:
-  number: 5
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
